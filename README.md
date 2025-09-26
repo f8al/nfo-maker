@@ -111,8 +111,12 @@ See available fonts:
 pyfiglet -l | less
 ```
 
-Top picks: `slant`, `standard`, `big`, `block`, `doom`, `starwars`,
+Top picks: 
+Classio / Readable
+`slant`, `standard`, `big`, `block`, `doom`, `starwars`,
 `smshadow`, `smslant`.
+Retro / Demo-Scene Flavor
+`doom`, `starwars`, `smshadow`, `bubble`, `digital`, `rectangles`, `speed`, `universe`, `pagga`
 
 ------------------------------------------------------------------------
 
