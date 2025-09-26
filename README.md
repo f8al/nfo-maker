@@ -30,7 +30,7 @@ Pipe text in via stdin and style it:
 ```bash
 echo "securityshrimp" | nfo-maker --border double --gradient cyan
 ```
-
+![](https://github.com/f8al/media/blob/main/secshrimp_banner.png?raw=true)
 ### Options
 
 - `--preset` : unicode | ansi | ascii
@@ -68,47 +68,3 @@ echo "NFO Art Maker" | nfo-maker --figlet-font speed \
 
 ```python
 from nfo_art import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
-
-# Simple banner
-opts = NFOArtOptions(border="double", gradient="cyan")
-print(make_art_string("SECURITYSHRIMP", opts))
-
-# With NFO metadata
-opts = NFOArtOptions(
-    preset="unicode", border="double", gradient="gradient",
-    nfo=True, group="w00w00",
-    release="Ghost Shrimp Keygen Deluxe",
-    cracked_by="f8al",
-    notes="For educational demos only."
-)
-print(make_art_string("NFO-MAKER", opts))
-
-# Save outputs
-lines = make_art("securityshrimp", opts)
-save_py_snippet("banner.py", lines)   # Python snippet with ANSI \x1b escapes
-save_nfo_file("banner.nfo", lines)    # Pure CP437 .nfo file
-```
-
----
-
-## 🛠️ Development
-
-Clone and install in editable mode:
-
-```bash
-git clone https://github.com/f8al/nfo-maker.git
-cd nfo-maker
-pip install -e .[pyfiglet]
-```
-
-Run CLI locally:
-
-```bash
-echo "HELLO" | python -m nfo_art.cli --gradient magenta
-```
-
----
-
-## 📜 License
-
-MIT © 2025 Security Shrimp LTD, LLC ([@securityshrimp](https://securityshrimp.com))
