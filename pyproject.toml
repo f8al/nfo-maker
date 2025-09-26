@@ -1,6 +1,6 @@
 [project]
 name = "nfo-maker"
-version = "1.0.1"
+version = "1.0.2"
 description = "Retro NFO/keygen-style banner generator (CLI + library)."
 readme = "README.md"
 authors = [
