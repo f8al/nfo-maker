@@ -17,7 +17,7 @@ It supports Unicode/ANSI/ASCII art, optional color gradients, and `.nfo` file ou
 pip install nfo-maker
 
 # With FIGlet support (fancier fonts)
-pip install nfo-maker[figlet]
+pip install nfo-maker pyfiglet
 ```
 
 ---
