@@ -1,6 +1,6 @@
 # 🎨 NFO Art Maker
 
-[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)](https://pypi.org/project/nfo-maker/)
+[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)]((https://pypi.org/project/nfo-maker/))
 [![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-maker/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
