@@ -86,7 +86,7 @@ Clone and install in editable mode:
 ```bash
 git clone https://github.com/f8al/nfo-maker.git
 cd nfo-maker
-pip install -e .[figlet]
+pip install -e .[pyfiglet]
 ```
 
 Run CLI locally:
