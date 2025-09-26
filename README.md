@@ -113,10 +113,10 @@ pyfiglet -l | less
 
 Top picks: 
 Classio / Readable
-`slant`, `standard`, `big`, `block`, `doom`, `starwars`,
-`smshadow`, `smslant`.
+`slant`, `standard`, `big`, `block`, `doom`, `starwars`, `smshadow`, `smslant`.
+
 Retro / Demo-Scene Flavor
-`doom`, `starwars`, `smshadow`, `bubble`, `digital`, `rectangles`, `speed`, `universe`, `pagga`
+`doom`, `starwars`, `smshadow`, `bubble`, `digital`, `rectangles`, `speed`, `universe`, `pagga`.
 
 ------------------------------------------------------------------------
 
