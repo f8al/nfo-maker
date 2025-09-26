@@ -1,0 +1,46 @@
+[project]
+name = "nfo-maker"
+version = "1.0.0"
+description = "Retro NFO/keygen-style banner generator (CLI + library)."
+readme = "README.md"
+authors = [
+  { name = "Skip Cruse", email = "securityshrimp@proton.me" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = []
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Topic :: Artistic Software",
+  "Topic :: Terminals",
+  "Topic :: Text Processing :: General",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
+]
+
+[project.optional-dependencies]
+figlet = ["pyfiglet>=0.8"]
+
+[project.urls]
+Homepage = "https://github.com/f8al/nfo-maker"
+Repository = "https://github.com/f8al/nfo-maker"
+Issues = "https://github.com/f8al/nfo-maker/issues"
+
+[project.scripts]
+nfo-maker = "nfo_art.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nfo_art*"]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.package-data]
+nfo_art = ["py.typed"]
