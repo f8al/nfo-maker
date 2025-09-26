@@ -84,8 +84,8 @@ save_nfo_file("banner.nfo", lines)    # Pure CP437 .nfo file
 Clone and install in editable mode:
 
 ```bash
-git clone https://github.com/f8al/nfo-art.git
-cd nfo-art
+git clone https://github.com/f8al/nfo-maker.git
+cd nfo-maker
 pip install -e .[figlet]
 ```
 
