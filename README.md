@@ -55,7 +55,11 @@ echo "securityshrimp" | nfo-maker --border double --gradient cyan
 ### Example
 
 ```bash
-echo "NFO Art Maker" | nfo-maker --figlet-font speed --nfo --release "NFO Art Maker 1.0.1" --cracked-by "f8al" --group "w00w00" --url "https://www.securityshrimp.com" --greets "Batoure, Bobby the Phish" --notes "hack the planet" --supplier "SecurityShtimp" --title "NFO Art Maker"
+echo "NFO Art Maker" | nfo-maker --figlet-font speed \
+--nfo --release "NFO Art Maker 1.0.1" --cracked-by "f8al" \
+--group "w00w00" --url "https://www.securityshrimp.com" \
+--greets "Batoure, Bobby the Phish" --notes "hack the planet"\
+ --supplier "SecurityShtimp" --title "NFO Art Maker"
 ```
 ![](https://github.com/f8al/media/blob/main/nfo-full.png?raw=true)
 ---
