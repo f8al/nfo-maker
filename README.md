@@ -1,126 +1,102 @@
-# 🎨 NFO Art Maker
+# 🎨 NFO Art
 
-A retro-inspired **command-line tool** that generates ASCII/ANSI/Unicode
-art banners like the old-school **.NFO / keygen cracktro** files of the
-80s and 90s.\
-Works great on macOS (Apple Silicon), Linux, and anywhere Python 3 runs.
+[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)](https://pypi.org/project/nfo-art/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-art/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-------------------------------------------------------------------------
+**NFO Art** is a retro-inspired Python library + CLI that generates banners styled like classic `.NFO` and keygen cracktro art from the 80s/90s warez scene.
 
-## ✨ Features
+It supports Unicode/ANSI/ASCII art, optional color gradients, and `.nfo` file output in CP437 encoding for true nostalgia.
 
--   Render text as **block art** using:
-    -   Built-in 5×7 ASCII font
-    -   Any [pyfiglet](https://pypi.org/project/pyfiglet/) font
-        (`--figlet-font`)
--   Add **borders** (double, single, ASCII, or none)
--   Add **color gradients** with ANSI escape codes
--   Include an **NFO metadata block**:
-    -   Release, Supplier, Cracked by, Group, Greets, Notes...
--   Compatible modes:
-    -   `--vt-safe` → only safe SGR sequences (no 256-color)
-    -   `--charset ascii` → ASCII-only borders
-    -   `--network-safe` → Cisco/Fortinet CLI safe (ASCII-only, no
-        color, plain `#` fill)
+---
 
-------------------------------------------------------------------------
+## 🚀 Installation
 
-## 🚀 Quick Start
+```bash
+# Basic install
+pip install nfo-art
 
-``` bash
-chmod +x nfo_art.py
+# With FIGlet support (fancier fonts)
+pip install nfo-art[figlet]
+```
 
-# Basic usage
-echo "SecurityShrimp" | ./nfo_art.py
+---
 
-# Unicode blocks + double border + gradient
-echo "SECURITYSHRIMP" | ./nfo_art.py --preset unicode --border double --gradient gradient
+## 🖥️ CLI Usage
+
+Pipe text in via stdin and style it:
+
+```bash
+echo "securityshrimp" | nfo-art --border double --gradient cyan
+```
+
+### Options
+
+- `--preset` : unicode | ansi | ascii
+- `--border` : double | single | ascii | none
+- `--gradient` : none | mono | cyan | magenta | grey | gradient | sunset
+- `--figlet-font` : Use any FIGlet font (requires `pyfiglet`)
+- `--nfo` : Add release metadata (release, group, supplier, etc.)
+- `--save-nfo file.nfo` : Save CP437 `.nfo` file (ANSI stripped, ASCII fallback)
+- `--python` : Output Python `print()` snippet
+- `--save-py file.py` : Save snippet directly to file
+- `--max-width` : ANSI-aware wrapping
+- `--no-color` : Strip all color/bold codes
+- `--network-safe` : Cisco/Fortinet compatible (ASCII only, no color)
+
+### Example
+
+```bash
+echo "NFO-MAKER" | nfo-art --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
+```
+
+---
+
+## 🐍 Library Usage
+
+```python
+from nfo_art import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
+
+# Simple banner
+opts = NFOArtOptions(border="double", gradient="cyan")
+print(make_art_string("SECURITYSHRIMP", opts))
 
 # With NFO metadata
-echo "SecurityShrimp" | ./nfo_art.py --nfo \
-  --group SHR1MP \
-  --release "Ghost Shrimp Keygen Deluxe" \
-  --cracked-by f8al \
-  --greets "w00w00, DC402" \
-  --notes "For educational demos only."
+opts = NFOArtOptions(
+    preset="unicode", border="double", gradient="gradient",
+    nfo=True, group="w00w00",
+    release="Ghost Shrimp Keygen Deluxe",
+    cracked_by="f8al",
+    notes="For educational demos only."
+)
+print(make_art_string("NFO-MAKER", opts))
+
+# Save outputs
+lines = make_art("securityshrimp", opts)
+save_py_snippet("banner.py", lines)   # Python snippet with ANSI \x1b escapes
+save_nfo_file("banner.nfo", lines)    # Pure CP437 .nfo file
 ```
 
-------------------------------------------------------------------------
+---
 
-## 🔧 Options
+## 🛠️ Development
 
-### Rendering
+Clone and install in editable mode:
 
--   `--preset {unicode,ansi,ascii}`\
-    Choose block characters (`█`, `▓`, or `#`).
--   `--border {double,single,ascii,none}`\
-    Frame style.
--   `--align {left,center}`\
-    Align output (center works best with `--border none`).
--   `--gradient {none,mono,cyan,magenta,grey,gradient,sunset}`\
-    Color palette (if not `--vt-safe` or `--network-safe`).
--   `--figlet-font <name>`\
-    Use a FIGlet font if [pyfiglet](https://pypi.org/project/pyfiglet/)
-    is installed.
-
-### Metadata
-
--   `--nfo` → Append classic NFO fields
--   `--group`, `--release`, `--supplier`, `--cracked-by`, `--date`,
-    `--url`, `--greets`, `--notes`
-
-### Compatibility
-
--   `--vt-safe` → strip 256-color, keep only 8/16 SGR safe for
-    VT100/VT220
--   `--charset ascii` → force ASCII borders (`+-|`)
--   `--network-safe` → Cisco/Fortinet compatible:
-    -   ASCII borders
-    -   No color
-    -   Plain ASCII fills (`#`)
-
-------------------------------------------------------------------------
-
-## 📚 Examples
-
-### FIGlet font (requires `pyfiglet`)
-
-``` bash
-echo "SecurityShrimp" | ./nfo_art.py --figlet-font slant --gradient cyan
+```bash
+git clone https://github.com/f8al/nfo-art.git
+cd nfo-art
+pip install -e .[figlet]
 ```
 
-### VT-safe output
+Run CLI locally:
 
-``` bash
-echo "SecurityShrimp" | ./nfo_art.py --figlet-font standard --gradient cyan --vt-safe
+```bash
+echo "HELLO" | python -m nfo_art.cli --gradient magenta
 ```
 
-### Cisco/Fortinet safe
+---
 
-``` bash
-echo "SECURITYSHRIMP" | ./nfo_art.py --network-safe
-```
+## 📜 License
 
-------------------------------------------------------------------------
-
-## 🖼️ Preview Fonts
-
-See available fonts:
-
-``` bash
-pyfiglet -l | less
-```
-
-Top picks: 
-Classio / Readable
-`slant`, `standard`, `big`, `block`, `doom`, `starwars`, `smshadow`, `smslant`.
-
-Retro / Demo-Scene Flavor
-`doom`, `starwars`, `smshadow`, `bubble`, `digital`, `rectangles`, `speed`, `universe`, `pagga`.
-
-------------------------------------------------------------------------
-
-## 📝 License
-
-MIT -- do whatever you want, just don't blame me if your banner bricks a
-Cisco box 😉
+MIT © 2025 Security Shrimp LTD, LLC ([@securityshrimp](https://securityshrimp.com))
