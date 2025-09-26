@@ -1,3 +1,4 @@
+[](https://github.com/f8al/media/blob/main/nfo-banner.png?raw=true)
 # 🎨 NFO Art Maker
 
 [![PyPI](https://img.shields.io/pypi/v/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
@@ -36,20 +37,27 @@ echo "securityshrimp" | nfo-maker --border double --gradient cyan
 - `--border` : double | single | ascii | none
 - `--gradient` : none | mono | cyan | magenta | grey | gradient | sunset
 - `--figlet-font` : Use any FIGlet font (requires `pyfiglet`)
-- `--nfo` : Add release metadata (release, group, supplier, etc.)
 - `--save-nfo file.nfo` : Save CP437 `.nfo` file (ANSI stripped, ASCII fallback)
 - `--python` : Output Python `print()` snippet
 - `--save-py file.py` : Save snippet directly to file
 - `--max-width` : ANSI-aware wrapping
 - `--no-color` : Strip all color/bold codes
 - `--network-safe` : Cisco/Fortinet compatible (ASCII only, no color)
-
+#### --nfo Options
+- `--title` : Title to place in top of banner
+- `--release` : Text to place in Release
+- `--supplier` : Text to place in Supplier
+- `--cracked-by` : Text to place in Cracked By
+- `--group` : Text to place in Group
+- `--url` : Text to place in URL
+- `--greets` : Text to place in Greets
+- `--notes` : Text to place in notes
 ### Example
 
 ```bash
-echo "NFO-MAKER" | nfo-maker --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
+echo "NFO Art Maker" | nfo-maker --figlet-font speed --nfo --release "NFO Art Maker 1.0.1" --cracked-by "f8al" --group "w00w00" --url "https://www.securityshrimp.com" --greets "Batoure, Bobby the Phish" --notes "hack the planet" --supplier "SecurityShtimp" --title "NFO Art Maker"
 ```
-
+[](https://github.com/f8al/media/blob/main/nfo-full.png?raw=true)
 ---
 
 ## 🐍 Library Usage
