@@ -1,7 +1,7 @@
-# 🎨 NFO Art
+# 🎨 NFO Art Maker
 
-[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)](https://pypi.org/project/nfo-art/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-art/)
+[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)](https://pypi.org/project/nfo-maker/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-maker/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **NFO Art** is a retro-inspired Python library + CLI that generates banners styled like classic `.NFO` and keygen cracktro art from the 80s/90s warez scene.
