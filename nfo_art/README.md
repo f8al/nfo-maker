@@ -30,7 +30,7 @@ Pipe text in via stdin and style it:
 ```bash
 echo "securityshrimp" | nfo-maker --border double --gradient cyan
 ```
-
+![](https://github.com/f8al/media/blob/main/secshrimp_banner.png?raw=true)
 ### Options
 
 - `--preset` : unicode | ansi | ascii
