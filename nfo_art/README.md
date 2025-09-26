@@ -1,7 +1,7 @@
 # 🎨 NFO Art
 
-[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)](https://pypi.org/project/nfo-art/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-art/)
+[![PyPI](https://img.shields.io/pypi/v/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **NFO Art** is a retro-inspired Python library + CLI that generates banners styled like classic `.NFO` and keygen cracktro art from the 80s/90s warez scene.
@@ -14,10 +14,10 @@ It supports Unicode/ANSI/ASCII art, optional color gradients, and `.nfo` file ou
 
 ```bash
 # Basic install
-pip install nfo-art
+pip install nfo-maker
 
 # With FIGlet support (fancier fonts)
-pip install nfo-art[figlet]
+pip install nfo-maker[figlet]
 ```
 
 ---
@@ -27,7 +27,7 @@ pip install nfo-art[figlet]
 Pipe text in via stdin and style it:
 
 ```bash
-echo "securityshrimp" | nfo-art --border double --gradient cyan
+echo "securityshrimp" | nfo-maker --border double --gradient cyan
 ```
 
 ### Options
@@ -47,7 +47,7 @@ echo "securityshrimp" | nfo-art --border double --gradient cyan
 ### Example
 
 ```bash
-echo "NFO-MAKER" | nfo-art --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
+echo "NFO-MAKER" | nfo-maker --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
 ```
 
 ---
@@ -84,8 +84,8 @@ save_nfo_file("banner.nfo", lines)    # Pure CP437 .nfo file
 Clone and install in editable mode:
 
 ```bash
-git clone https://github.com/f8al/nfo-art.git
-cd nfo-art
+git clone https://github.com/f8al/nfo-maker.git
+cd nfo-maker
 pip install -e .[figlet]
 ```
 

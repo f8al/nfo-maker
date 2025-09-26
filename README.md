@@ -1,7 +1,7 @@
-# 🎨 NFO Art Maker
+# 🎨 NFO Art
 
-[![PyPI](https://img.shields.io/pypi/v/nfo-art.svg)]((https://pypi.org/project/nfo-maker/))
-[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-art.svg)](https://pypi.org/project/nfo-maker/)
+[![PyPI](https://img.shields.io/pypi/v/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **NFO Art** is a retro-inspired Python library + CLI that generates banners styled like classic `.NFO` and keygen cracktro art from the 80s/90s warez scene.
@@ -55,7 +55,7 @@ echo "NFO-MAKER" | nfo-maker --nfo   --group "w00w00"   --release "Ghost Shrimp 
 ## 🐍 Library Usage
 
 ```python
-from nfo_maker import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
+from nfo_art import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
 
 # Simple banner
 opts = NFOArtOptions(border="double", gradient="cyan")
