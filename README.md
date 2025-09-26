@@ -1,4 +1,4 @@
-# 🎨 NFO Art
+# 🎨 NFO Art Maker
 
 [![PyPI](https://img.shields.io/pypi/v/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/nfo-maker.svg)](https://pypi.org/project/nfo-art/)
