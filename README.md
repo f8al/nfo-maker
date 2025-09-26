@@ -14,10 +14,10 @@ It supports Unicode/ANSI/ASCII art, optional color gradients, and `.nfo` file ou
 
 ```bash
 # Basic install
-pip install nfo-art
+pip install nfo-maker
 
 # With FIGlet support (fancier fonts)
-pip install nfo-art[figlet]
+pip install nfo-maker[figlet]
 ```
 
 ---
@@ -27,7 +27,7 @@ pip install nfo-art[figlet]
 Pipe text in via stdin and style it:
 
 ```bash
-echo "securityshrimp" | nfo-art --border double --gradient cyan
+echo "securityshrimp" | nfo-maker --border double --gradient cyan
 ```
 
 ### Options
@@ -47,7 +47,7 @@ echo "securityshrimp" | nfo-art --border double --gradient cyan
 ### Example
 
 ```bash
-echo "NFO-MAKER" | nfo-art --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
+echo "NFO-MAKER" | nfo-maker --nfo   --group "w00w00"   --release "Ghost Shrimp Keygen Deluxe Art Maker"   --cracked-by "f8al"   --title "Crustacean Release"   --preset unicode --border double --gradient gradient   --save-py banner.py --save-nfo banner.nfo
 ```
 
 ---
@@ -55,7 +55,7 @@ echo "NFO-MAKER" | nfo-art --nfo   --group "w00w00"   --release "Ghost Shrimp Ke
 ## 🐍 Library Usage
 
 ```python
-from nfo_art import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
+from nfo_maker import NFOArtOptions, make_art, make_art_string, save_py_snippet, save_nfo_file
 
 # Simple banner
 opts = NFOArtOptions(border="double", gradient="cyan")
